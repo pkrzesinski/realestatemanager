@@ -12,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PropertyController {
 
-
     private final PropertyService propertyService;
 
     @GetMapping
@@ -24,7 +23,6 @@ public class PropertyController {
     public Property save(@RequestBody Property property) {
         return propertyService.save(property);
     }
-
 
     @PutMapping
     public Property update(@RequestBody Property property) {
