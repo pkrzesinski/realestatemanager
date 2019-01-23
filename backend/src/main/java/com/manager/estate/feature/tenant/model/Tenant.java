@@ -1,4 +1,3 @@
-/*
 package com.manager.estate.feature.tenant.model;
 
 import com.manager.estate.feature.apartment.model.Apartment;
@@ -6,10 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 
@@ -30,6 +26,7 @@ public class Tenant {
     private String password;
     private String documentId;
     private LocalDate birthday;
-    private Apartment apartment;
 
-}*/
+    @ManyToOne
+    private Apartment apartment;
+}
