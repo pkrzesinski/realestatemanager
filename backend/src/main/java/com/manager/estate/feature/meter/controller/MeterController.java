@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/meter")
 @RequiredArgsConstructor
-public class MediaController {
+public class MeterController {
 
     private final MeterService meterService;
 
