@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/api/meter")
+@RequestMapping("api/v1/meter")
 @RequiredArgsConstructor
 public class MediaController {
 
