@@ -1,5 +1,4 @@
 package com.manager.estate.feature.apartment.dao;
-
 import com.manager.estate.feature.apartment.model.Apartment;
 import org.springframework.data.jpa.repository.JpaRepository;
 

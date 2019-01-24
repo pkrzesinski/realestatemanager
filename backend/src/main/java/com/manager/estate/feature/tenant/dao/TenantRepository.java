@@ -1,5 +1,4 @@
 package com.manager.estate.feature.tenant.dao;
-
 import com.manager.estate.feature.tenant.model.Tenant;
 import org.springframework.data.jpa.repository.JpaRepository;
 

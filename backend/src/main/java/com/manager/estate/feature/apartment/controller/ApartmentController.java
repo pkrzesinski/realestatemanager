@@ -1,15 +1,12 @@
 package com.manager.estate.feature.apartment.controller;
-
-
 import com.manager.estate.feature.apartment.model.Apartment;
 import com.manager.estate.feature.apartment.service.ApartmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/apartment")
+@RequestMapping("api/v1/apartments")
 @RequiredArgsConstructor
 public class ApartmentController {
 
