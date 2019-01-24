@@ -17,4 +17,5 @@ cache:
 build:
   stage: build
   script:
-  - mvn $MAVEN_CLI_OPTS clean install
+  - mvn -f backend $MAVEN_CLI_OPTS clean install
+  - "cat backend/target/site/jacoco/index.html"
