@@ -68,8 +68,8 @@ public class Main {
         return meters;
     }
 
-    public static List<Reading> getReadingsForApartment() {
-        List<Reading> readings = new ArrayList<>();
+    public static List<List<Reading>> getReadingsForApartment() {
+        List<List<Reading>> readings = new ArrayList<>();
 
         Reading readingWater1Ap1 = new Reading(1L, getMetersForApartment().get(0), 34.2);
         Reading readingWater2Ap1 = new Reading(2L, getMetersForApartment().get(0), 43.5);
@@ -93,14 +93,25 @@ public class Main {
         readingsWater2.addAll(Arrays.asList(readingWater2Ap1, readingWater2Ap2, readingWater2Ap3, readingWater2Ap4));
         List<Reading> readingsWater3 = new ArrayList<>();
         readingsWater3.addAll(Arrays.asList(readingWater3Ap1, readingWater3Ap2, readingWater3Ap3, readingWater3Ap4));
-        
+
+        readings.add(readingsWater1);
+        readings.add(readingsWater2);
+        readings.add(readingsWater3);
         return readings;
     }
 
     public static List<ReadingDate> getReadingDatesforReading() {
         List<ReadingDate> readingDates = new ArrayList<>();
 
-        ReadingDate readingDate1 = new ReadingDate(1L, LocalDate.of(2018, 12, 20),
-                getReadingsForApartment()., MediaType.WATER);
+        ReadingDate readingDate1 = new ReadingDate(1L, LocalDate.of(2018, 01, 20),
+                getReadingsForApartment().get(0), MediaType.WATER);
+
+        ReadingDate readingDate2 = new ReadingDate(2L, LocalDate.of(2018, 03, 21),
+                getReadingsForApartment().get(1), MediaType.WATER);
+
+        ReadingDate readingDate3 = new ReadingDate(3L, LocalDate.of(2018, 06, 3),
+                getReadingsForApartment().get(2), MediaType.WATER);
+        readingDates.addAll(Arrays.asList(readingDate1, readingDate2, readingDate3));
+        return readingDates;
     }
 }
