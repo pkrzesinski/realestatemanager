@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Reading {
+public class MeterValue {
     @Id
     @GeneratedValue
     private Long id;

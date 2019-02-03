@@ -1,6 +1,6 @@
 package com.manager.estate.feature.reading.service;
-import com.manager.estate.feature.reading.dao.ReadingRepository;
-import com.manager.estate.feature.reading.model.Reading;
+import com.manager.estate.feature.reading.dao.MeterValueRepository;
+import com.manager.estate.feature.reading.model.MeterValue;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,14 +9,14 @@ import java.util.List;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class ReadingService {
+public class MeterValueService {
 
-    private final ReadingRepository readingRepository;
+    private final MeterValueRepository readingRepository;
 
-    public List<Reading> getList() {
+    public List<MeterValue> getList() {
         return readingRepository.findAll();
     }
-    public Reading save(Reading reading) {
+    public MeterValue save(MeterValue reading) {
         return readingRepository.save(reading);
     }
     public void delete(Long id) {

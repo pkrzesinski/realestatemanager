@@ -1,6 +1,6 @@
 package com.manager.estate.feature.reading.controller;
-import com.manager.estate.feature.reading.model.Reading;
-import com.manager.estate.feature.reading.service.ReadingService;
+import com.manager.estate.feature.reading.model.MeterValue;
+import com.manager.estate.feature.reading.service.MeterValueService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -8,20 +8,20 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/readings")
 @RequiredArgsConstructor
-public class ReadingController {
+public class MeterValueController {
 
-    private final ReadingService readingService;
+    private final MeterValueService readingService;
 
     @GetMapping
-    public List<Reading> getList() {
+    public List<MeterValue> getList() {
         return readingService.getList();
     }
     @PostMapping
-    public Reading save(@RequestBody Reading reading) {
+    public MeterValue save(@RequestBody MeterValue reading) {
         return readingService.save(reading);
     }
     @PutMapping
-    public Reading update(@RequestBody Reading reading) {
+    public MeterValue update(@RequestBody MeterValue reading) {
         return readingService.save(reading);
     }
     @DeleteMapping("{id}")
