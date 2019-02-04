@@ -25,7 +25,6 @@ public class PropertyServiceTest {
     @InjectMocks
     private PropertyService classUnderTest;
 
-
     @Test
     public void shouldSave() {
         //Given
