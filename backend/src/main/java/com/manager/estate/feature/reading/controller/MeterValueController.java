@@ -1,5 +1,5 @@
 package com.manager.estate.feature.reading.controller;
-import com.manager.estate.feature.reading.model.MeterValue;
+import com.manager.estate.feature.reading.model.ReadingValue;
 import com.manager.estate.feature.reading.service.MeterValueService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,15 +13,15 @@ public class MeterValueController {
     private final MeterValueService readingService;
 
     @GetMapping
-    public List<MeterValue> getList() {
+    public List<ReadingValue> getList() {
         return readingService.getList();
     }
     @PostMapping
-    public MeterValue save(@RequestBody MeterValue reading) {
+    public ReadingValue save(@RequestBody ReadingValue reading) {
         return readingService.save(reading);
     }
     @PutMapping
-    public MeterValue update(@RequestBody MeterValue reading) {
+    public ReadingValue update(@RequestBody ReadingValue reading) {
         return readingService.save(reading);
     }
     @DeleteMapping("{id}")

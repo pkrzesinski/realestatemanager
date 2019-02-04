@@ -4,7 +4,7 @@ import com.manager.estate.feature.apartment.model.Apartment;
 import com.manager.estate.feature.mediaType.MediaType;
 import com.manager.estate.feature.meter.model.Meter;
 import com.manager.estate.feature.property.model.Property;
-import com.manager.estate.feature.reading.model.MeterValue;
+import com.manager.estate.feature.reading.model.ReadingValue;
 import com.manager.estate.feature.readingDate.MeterReadingDate;
 import com.manager.estate.feature.tenant.model.Tenant;
 
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class MockProvider {
     public static final List<Property> PROPERTIES = getProperties();
     public static final List<Apartment> APARTMENTS = getApartmentsForProperty();
     public static final List<Meter> METERS = getMetersForApartment();
@@ -71,34 +71,34 @@ public class Main {
         return meters;
     }
 
-    public static List<MeterValue> getMeterValuesForJanuary() {
-        List<MeterValue> meterValuesJanuary = new ArrayList<>();
-        MeterValue readingWater1Ap1 = new MeterValue(1L, METERS.get(0), 34.2);
-        MeterValue readingWater1Ap2 = new MeterValue(4L, METERS.get(3), 100.3);
-        MeterValue readingWater1Ap3 = new MeterValue(7L, METERS.get(6), 324.2);
-        MeterValue readingWater1Ap4 = new MeterValue(10L, METERS.get(9), 65.3);
-        meterValuesJanuary.addAll(Arrays.asList(readingWater1Ap1, readingWater1Ap2, readingWater1Ap3, readingWater1Ap4));
-        return meterValuesJanuary;
+    public static List<ReadingValue> getMeterValuesForJanuary() {
+        List<ReadingValue> readingValuesJanuary = new ArrayList<>();
+        ReadingValue readingWater1Ap1 = new ReadingValue(1L, METERS.get(0), 34.2);
+        ReadingValue readingWater1Ap2 = new ReadingValue(4L, METERS.get(3), 100.3);
+        ReadingValue readingWater1Ap3 = new ReadingValue(7L, METERS.get(6), 324.2);
+        ReadingValue readingWater1Ap4 = new ReadingValue(10L, METERS.get(9), 65.3);
+        readingValuesJanuary.addAll(Arrays.asList(readingWater1Ap1, readingWater1Ap2, readingWater1Ap3, readingWater1Ap4));
+        return readingValuesJanuary;
     }
 
-    public static List<MeterValue> getMeterValuesForMarch() {
-        List<MeterValue> meterValuesMarch = new ArrayList<>();
-        MeterValue readingWater2Ap1 = new MeterValue(2L, METERS.get(0), 43.5);
-        MeterValue readingWater2Ap2 = new MeterValue(3L, METERS.get(3), 150.2);
-        MeterValue readingWater2Ap3 = new MeterValue(8L, METERS.get(6), 453.5);
-        MeterValue readingWater2Ap4 = new MeterValue(11L, METERS.get(9), 74.4);
-        meterValuesMarch.addAll(Arrays.asList(readingWater2Ap1, readingWater2Ap2, readingWater2Ap3, readingWater2Ap4));
-        return meterValuesMarch;
+    public static List<ReadingValue> getMeterValuesForMarch() {
+        List<ReadingValue> readingValuesMarches = new ArrayList<>();
+        ReadingValue readingWater2Ap1 = new ReadingValue(2L, METERS.get(0), 43.5);
+        ReadingValue readingWater2Ap2 = new ReadingValue(3L, METERS.get(3), 150.2);
+        ReadingValue readingWater2Ap3 = new ReadingValue(8L, METERS.get(6), 453.5);
+        ReadingValue readingWater2Ap4 = new ReadingValue(11L, METERS.get(9), 74.4);
+        readingValuesMarches.addAll(Arrays.asList(readingWater2Ap1, readingWater2Ap2, readingWater2Ap3, readingWater2Ap4));
+        return readingValuesMarches;
     }
 
-    public static List<MeterValue> getMeterValuesForJune() {
-        List<MeterValue> meterValuesJune = new ArrayList<>();
-        MeterValue readingWater3Ap1 = new MeterValue(3L, METERS.get(0), 56.3);
-        MeterValue readingWater3Ap2 = new MeterValue(6L, METERS.get(3), 204.9);
-        MeterValue readingWater3Ap3 = new MeterValue(9L, METERS.get(6), 566.3);
-        MeterValue readingWater3Ap4 = new MeterValue(12L, METERS.get(9), 100.9);
-        meterValuesJune.addAll(Arrays.asList(readingWater3Ap1, readingWater3Ap2, readingWater3Ap3, readingWater3Ap4));
-        return meterValuesJune;
+    public static List<ReadingValue> getMeterValuesForJune() {
+        List<ReadingValue> readingValuesJune = new ArrayList<>();
+        ReadingValue readingWater3Ap1 = new ReadingValue(3L, METERS.get(0), 56.3);
+        ReadingValue readingWater3Ap2 = new ReadingValue(6L, METERS.get(3), 204.9);
+        ReadingValue readingWater3Ap3 = new ReadingValue(9L, METERS.get(6), 566.3);
+        ReadingValue readingWater3Ap4 = new ReadingValue(12L, METERS.get(9), 100.9);
+        readingValuesJune.addAll(Arrays.asList(readingWater3Ap1, readingWater3Ap2, readingWater3Ap3, readingWater3Ap4));
+        return readingValuesJune;
     }
 
     public static List<MeterReadingDate> getReadingDatesforMeterReadings() {
