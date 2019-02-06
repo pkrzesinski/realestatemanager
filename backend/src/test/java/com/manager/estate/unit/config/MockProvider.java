@@ -5,7 +5,7 @@ import com.manager.estate.feature.mediaType.MediaType;
 import com.manager.estate.feature.meter.model.Meter;
 import com.manager.estate.feature.property.model.Property;
 import com.manager.estate.feature.readings.readingDate.model.Readings;
-import com.manager.estate.feature.readings.readingValue.model.ReadingValue;
+import com.manager.estate.feature.readings.readingDate.model.ReadingValue;
 import com.manager.estate.feature.tenant.model.Tenant;
 
 import java.time.LocalDate;

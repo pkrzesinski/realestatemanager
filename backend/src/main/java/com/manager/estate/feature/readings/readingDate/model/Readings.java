@@ -1,7 +1,6 @@
 package com.manager.estate.feature.readings.readingDate.model;
 
 import com.manager.estate.feature.mediaType.MediaType;
-import com.manager.estate.feature.readings.readingValue.model.ReadingValue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
