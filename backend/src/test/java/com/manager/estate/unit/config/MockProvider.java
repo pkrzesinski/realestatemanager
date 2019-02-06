@@ -4,8 +4,8 @@ import com.manager.estate.feature.apartment.model.Apartment;
 import com.manager.estate.feature.mediaType.MediaType;
 import com.manager.estate.feature.meter.model.Meter;
 import com.manager.estate.feature.property.model.Property;
-import com.manager.estate.feature.reading.model.ReadingValue;
-import com.manager.estate.feature.readingDate.MeterReadingDate;
+import com.manager.estate.feature.readings.readingDate.model.Readings;
+import com.manager.estate.feature.readings.readingValue.model.ReadingValue;
 import com.manager.estate.feature.tenant.model.Tenant;
 
 import java.time.LocalDate;
@@ -17,15 +17,20 @@ public class MockProvider {
     public static final List<Property> PROPERTIES = getProperties();
     public static final List<Apartment> APARTMENTS = getApartmentsForProperty();
     public static final List<Meter> METERS = getMetersForApartment();
+    public static final List<Tenant> TENANTS = getTenantsForApartment();
+    public static final List<ReadingValue> READING_VALUES_JANUARY = getReadingValuesForJanuary();
+    public static final List<ReadingValue> READING_VALUES_MARCH = getReadingValuesForMarch();
+    public static final List<ReadingValue> READING_VALUES_JUNE = getReadingValuesForJune();
+    public static final List<Readings> READINGS = getReadingForMeterReadings();
 
-    public static List<Property> getProperties() {
+    private static List<Property> getProperties() {
         List<Property> properties = new ArrayList<>();
         Property property1 = new Property(1L, "Świętojańska", "13", "Gdynia", "81-364");
         properties.addAll(Arrays.asList(property1));
         return properties;
     }
 
-    public static List<Apartment> getApartmentsForProperty() {
+    private static List<Apartment> getApartmentsForProperty() {
         List<Apartment> apartments = new ArrayList<>();
 
         Apartment apartment1 = new Apartment(1L, "1", -1, 2, 38.5, "Basement", PROPERTIES.get(0));
@@ -36,7 +41,7 @@ public class MockProvider {
         return apartments;
     }
 
-    public static List<Tenant> getTenantsForApartment() {
+    private static List<Tenant> getTenantsForApartment() {
         List<Tenant> tenants = new ArrayList<>();
 
         Tenant tenant1 = new Tenant(1L, "Adam", "Kowalski", "adam@kowalski.pl", "500600700",
@@ -51,7 +56,7 @@ public class MockProvider {
         return tenants;
     }
 
-    public static List<Meter> getMetersForApartment() {
+    private static List<Meter> getMetersForApartment() {
         List<Meter> meters = new ArrayList<>();
 
         Meter water1 = new Meter(1L, "12345", MediaType.WATER, APARTMENTS.get(0));
@@ -71,7 +76,7 @@ public class MockProvider {
         return meters;
     }
 
-    public static List<ReadingValue> getMeterValuesForJanuary() {
+    private static List<ReadingValue> getReadingValuesForJanuary() {
         List<ReadingValue> readingValuesJanuary = new ArrayList<>();
         ReadingValue readingWater1Ap1 = new ReadingValue(1L, METERS.get(0), 34.2);
         ReadingValue readingWater1Ap2 = new ReadingValue(4L, METERS.get(3), 100.3);
@@ -81,7 +86,7 @@ public class MockProvider {
         return readingValuesJanuary;
     }
 
-    public static List<ReadingValue> getMeterValuesForMarch() {
+    public static List<ReadingValue> getReadingValuesForMarch() {
         List<ReadingValue> readingValuesMarches = new ArrayList<>();
         ReadingValue readingWater2Ap1 = new ReadingValue(2L, METERS.get(0), 43.5);
         ReadingValue readingWater2Ap2 = new ReadingValue(3L, METERS.get(3), 150.2);
@@ -91,7 +96,7 @@ public class MockProvider {
         return readingValuesMarches;
     }
 
-    public static List<ReadingValue> getMeterValuesForJune() {
+    public static List<ReadingValue> getReadingValuesForJune() {
         List<ReadingValue> readingValuesJune = new ArrayList<>();
         ReadingValue readingWater3Ap1 = new ReadingValue(3L, METERS.get(0), 56.3);
         ReadingValue readingWater3Ap2 = new ReadingValue(6L, METERS.get(3), 204.9);
@@ -101,18 +106,18 @@ public class MockProvider {
         return readingValuesJune;
     }
 
-    public static List<MeterReadingDate> getReadingDatesforMeterReadings() {
-        List<MeterReadingDate> readingDates = new ArrayList<>();
+    public static List<Readings> getReadingForMeterReadings() {
+        List<Readings> readings = new ArrayList<>();
 
-        MeterReadingDate readingDate1 = new MeterReadingDate(1L, LocalDate.of(2018, 01, 20),
-                getMeterValuesForJanuary(), MediaType.WATER);
+        Readings readingDate1 = new Readings(1L, LocalDate.of(2018, 01, 20),
+                getReadingValuesForJanuary(), MediaType.WATER);
 
-        MeterReadingDate readingDate2 = new MeterReadingDate(2L, LocalDate.of(2018, 03, 21),
-                getMeterValuesForMarch(), MediaType.WATER);
+        Readings readingDate2 = new Readings(2L, LocalDate.of(2018, 03, 21),
+                getReadingValuesForMarch(), MediaType.WATER);
 
-        MeterReadingDate readingDate3 = new MeterReadingDate(3L, LocalDate.of(2018, 06, 3),
-                getMeterValuesForJune(), MediaType.WATER);
-        readingDates.addAll(Arrays.asList(readingDate1, readingDate2, readingDate3));
-        return readingDates;
+        Readings readingDate3 = new Readings(3L, LocalDate.of(2018, 06, 3),
+                getReadingValuesForJune(), MediaType.WATER);
+        readings.addAll(Arrays.asList(readingDate1, readingDate2, readingDate3));
+        return readings;
     }
 }

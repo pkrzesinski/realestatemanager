@@ -1,7 +1,7 @@
-package com.manager.estate.feature.readingDate;
+package com.manager.estate.feature.readings.readingDate.model;
 
 import com.manager.estate.feature.mediaType.MediaType;
-import com.manager.estate.feature.reading.model.ReadingValue;
+import com.manager.estate.feature.readings.readingValue.model.ReadingValue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,12 +17,12 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MeterReadingDate {
+public class Readings {
     @Id
     @GeneratedValue
     private Long id;
     private LocalDate readingDate;
     @OneToMany
-    private List<ReadingValue> readings;
+    private List<ReadingValue> readingValues;
     private MediaType mediaType;
 }

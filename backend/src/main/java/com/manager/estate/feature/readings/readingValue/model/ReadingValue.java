@@ -1,4 +1,4 @@
-package com.manager.estate.feature.reading.model;
+package com.manager.estate.feature.readings.readingValue.model;
 
 import com.manager.estate.feature.meter.model.Meter;
 import lombok.AllArgsConstructor;
