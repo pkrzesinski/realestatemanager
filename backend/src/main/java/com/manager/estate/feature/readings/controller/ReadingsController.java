@@ -1,7 +1,7 @@
-package com.manager.estate.feature.readings.readingDate.controller;
+package com.manager.estate.feature.readings.controller;
 
-import com.manager.estate.feature.readings.readingDate.model.Readings;
-import com.manager.estate.feature.readings.readingDate.service.ReadingsService;
+import com.manager.estate.feature.readings.model.Readings;
+import com.manager.estate.feature.readings.service.ReadingsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,8 +1,8 @@
 package com.manager.estate.unit.feature.reading;
 
-import com.manager.estate.feature.reading.dao.ReadingRepository;
-import com.manager.estate.feature.reading.model.Reading;
-import com.manager.estate.feature.reading.service.ReadingService;
+import com.manager.estate.feature.readings.dao.ReadingsRepository;
+import com.manager.estate.feature.readings.model.Readings;
+import com.manager.estate.feature.readings.service.ReadingsService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -17,21 +17,21 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ReadingServiceTest {
+public class ReadingsServiceTest {
 
     @Mock
-    private ReadingRepository readingRepository;
+    private ReadingsRepository readingRepository;
 
     @InjectMocks
-    private ReadingService classUnderTest;
+    private ReadingsService classUnderTest;
 
     @Test
     public void ShouldGetList() {
         //Given
-        List<Reading> readings = createdMockedList();
+        List<Readings> readings = createdMockedList();
         when(readingRepository.findAll()).thenReturn(readings);
         //When
-        final List<Reading> result = classUnderTest.getList();
+        final List<Readings> result = classUnderTest.getList();
         //Then
         assertEquals(2, result.size());
     }
@@ -39,7 +39,7 @@ public class ReadingServiceTest {
     @Test
     public void shouldSave() {
         //Given
-        Reading reading = new Reading();
+        Readings reading = new Readings();
         //When
         classUnderTest.save(reading);
         //Then
@@ -56,10 +56,10 @@ public class ReadingServiceTest {
         verify(readingRepository).delete(id);
     }
 
-    public List<Reading> createdMockedList() {
-        List<Reading> mockedList = new ArrayList<>();
-        mockedList.add(new Reading());
-        mockedList.add(new Reading());
+    public List<Readings> createdMockedList() {
+        List<Readings> mockedList = new ArrayList<>();
+        mockedList.add(new Readings());
+        mockedList.add(new Readings());
         return mockedList;
     }
 }

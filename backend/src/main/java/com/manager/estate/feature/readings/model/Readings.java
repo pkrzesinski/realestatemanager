@@ -1,4 +1,4 @@
-package com.manager.estate.feature.readings.readingDate.model;
+package com.manager.estate.feature.readings.model;
 
 import com.manager.estate.feature.mediaType.MediaType;
 import lombok.AllArgsConstructor;
