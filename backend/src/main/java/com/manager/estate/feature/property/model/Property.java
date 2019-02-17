@@ -1,5 +1,6 @@
 package com.manager.estate.feature.property.model;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Property {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

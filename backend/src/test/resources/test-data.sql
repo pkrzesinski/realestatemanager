@@ -1,0 +1,2 @@
+INSERT INTO PROPERTY (id, street, building_number, city, post_code) VALUES (1, 'Władysława IV', 31, 'Gdynia', '81-200');
+INSERT INTO PROPERTY (id, street, building_number, city, post_code) VALUES (2, '10 Lutego', 9, 'Gdynia', '81-300');
