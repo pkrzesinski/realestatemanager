@@ -1,24 +1,37 @@
 package com.manager.estate.feature.apartment.model;
+
 import com.manager.estate.feature.property.model.Property;
+import com.manager.estate.shared.jpa.DatabaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import javax.persistence.*;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Min;
 
 @Entity
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"number", "property_id"}, name="UNIQUE_APARTMENT_NUM_FOR_PROPERTY_CONSTRAINT")})
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Apartment {
+public class Apartment extends DatabaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @NotEmpty
     private String number;
+    @Min(0)
     private int floor;
+    @Min(0)
     private int rooms;
+    @Min(0)
     private double size;
+    @NotEmpty
     private String description;
-    @ManyToOne
+    @ManyToOne(optional = false)
     private Property property;
 }

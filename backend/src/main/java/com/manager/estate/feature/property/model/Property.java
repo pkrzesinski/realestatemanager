@@ -1,24 +1,25 @@
 package com.manager.estate.feature.property.model;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import com.manager.estate.shared.jpa.DatabaseEntity;
+import lombok.*;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
+@EqualsAndHashCode(callSuper = false)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Property {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Property extends DatabaseEntity {
+
+    @NotEmpty
     private String street;
+    @NotEmpty
     private String buildingNumber;
+    @NotEmpty
     private String city;
+    @NotEmpty
     private String postCode;
 }
