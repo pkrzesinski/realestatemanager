@@ -1,4 +1,4 @@
-package com.manager.estate.unit.config;
+package com.manager.estate.provider;
 
 import com.manager.estate.feature.apartment.model.Apartment;
 import com.manager.estate.feature.mediaType.MediaType;
@@ -24,17 +24,17 @@ public class MockProvider {
     public static final List<ReadingValue> READING_VALUES_JUNE = getReadingValuesForJune();
     public static final List<Readings> READINGS = getReadingForMeterReadings();
 
-    private static List<Property> getProperties() {
+    public static List<Property> getProperties() {
         List<Property> properties = new ArrayList<>();
-        properties.add(new Property(1L, "Świętojańska", "13", "Gdynia", "81-364"));
+        properties.add(new Property("Świętojańska", "13", "Gdynia", "81-364"));
         return properties;
     }
 
-    private static List<Apartment> getApartmentsForProperty() {
-        Apartment apartment1 = new Apartment(1L, "1", -1, 2, 38.5, "Basement", PROPERTIES.get(0));
-        Apartment apartment2 = new Apartment(2L, "2", 0, 1, 22.5, "Ground Floor", PROPERTIES.get(0));
-        Apartment apartment3 = new Apartment(3L, "3", 1, 3, 65.0, "1st floor", PROPERTIES.get(0));
-        Apartment apartment4 = new Apartment(4L, "4", 2, 5, 150.3, "2nd floor", PROPERTIES.get(0));
+    public static List<Apartment> getApartmentsForProperty() {
+        Apartment apartment1 = new Apartment("1", 0, 2, 38.5, "Basement", PROPERTIES.get(0));
+        Apartment apartment2 = new Apartment("2", 1, 1, 22.5, "Ground Floor", PROPERTIES.get(0));
+        Apartment apartment3 = new Apartment("3", 2, 3, 65.0, "1st floor", PROPERTIES.get(0));
+        Apartment apartment4 = new Apartment("4", 3, 5, 150.3, "2nd floor", PROPERTIES.get(0));
         return Lists.newArrayList(apartment1, apartment2, apartment3, apartment4);
     }
 
