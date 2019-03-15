@@ -6,6 +6,7 @@ import com.manager.estate.integration.config.Itest;
 import com.manager.estate.provider.MockProvider;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.ConstraintViolationException;
@@ -55,8 +56,19 @@ public class PropertyItest extends Itest {
         assertEquals(3, result.size());
     }
 
+    @Test(expected = DataIntegrityViolationException.class)
+    public void shouldNotSaveTwoPropertiesWithSameDetails() {
+        //Given
+        Property property1 = MockProvider.getProperties().get(0);
+        Property property2 = MockProvider.getProperties().get(0);
+
+        //When, Then
+        classUnderTest.save(property1);
+        classUnderTest.save(property2);
+    }
+
     @Test(expected = ConstraintViolationException.class)
-    public void shouldNotSaveWhenStretIsEmpty() {
+    public void shouldNotSaveWhenStreetIsEmpty() {
         //Given
         Property property = MockProvider.getProperties().get(0);
         property.setStreet("");
@@ -73,10 +85,8 @@ public class PropertyItest extends Itest {
         Property property = MockProvider.getProperties().get(0);
         property.setBuildingNumber("");
 
-        //When
+        //When,  Then
         classUnderTest.save(property);
-
-        //Then
     }
 
     @Test(expected = ConstraintViolationException.class)
