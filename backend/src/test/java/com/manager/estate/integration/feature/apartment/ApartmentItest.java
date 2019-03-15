@@ -36,8 +36,8 @@ public class ApartmentItest extends Itest {
         assertNotNull(apartment.getId());
     }
 
-    @Test(expected = ConstraintViolationException.class)
-    public void shouldNotSaveWhenFloorNumberIsNegative() {
+    @Test
+    public void shouldSaveWhenFloorNumberIsNegative() {
         //Given
         Apartment apartment = prepareApartmentForTest();
         apartment.setFloor(-6);

@@ -15,7 +15,7 @@ import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Min;
 
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"number", "property_id"}, name="UNIQUE_APARTMENT_NUM_FOR_PROPERTY_CONSTRAINT")})
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"number", "property_id"}, name = "UNIQUE_APARTMENT_NUM_FOR_PROPERTY_CONSTRAINT")})
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
@@ -24,7 +24,6 @@ public class Apartment extends DatabaseEntity {
 
     @NotEmpty
     private String number;
-    @Min(0)
     private int floor;
     @Min(0)
     private int rooms;

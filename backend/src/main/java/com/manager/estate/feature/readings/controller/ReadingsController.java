@@ -18,14 +18,17 @@ public class ReadingsController {
     public List<Readings> getList() {
         return readingsService.getList();
     }
+
     @PostMapping
     public Readings save(@RequestBody Readings readings) {
         return readingsService.save(readings);
     }
+
     @PutMapping
     public Readings update(@RequestBody Readings readings) {
         return readingsService.save(readings);
     }
+
     @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
         readingsService.delete(id);
