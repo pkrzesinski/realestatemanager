@@ -1,26 +1,29 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="/views/owner/home.html">Real Estate Manager</a>
     <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="/views/owner/property/property.html">Properties</a>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownStatic" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                Static
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/views/owner/property/property.html">Properties</a>
+                <a class="dropdown-item" href="/views/owner/tenant/tenant.html">Tenants</a>
+                <a class="dropdown-item" href="/views/owner/meter/meter.html">Meters</a>
+            </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/views/owner/tenant/tenant.html">Tenants</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/views/owner/meter/meter.html">Meters</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/views/owner/apartment/apartment.html">Apartments</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/views/owner/invoice/invoice.html">Invoices</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/views/owner/payment/payment.html">Payments</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/views/owner/reading/reading.html">Readings</a>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDynamic" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                Dynamic
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/views/owner/apartment/apartment.html">Apartments</a>
+                <a class="dropdown-item" href="/views/owner/invoice/invoice.html">Invoices</a>
+                <a class="dropdown-item" href="/views/owner/payment/payment.html">Payments</a>
+                <a class="dropdown-item" href="/views/owner/reading/reading.html">Readings</a>
+            </div>
         </li>
     </ul>
 </nav>
